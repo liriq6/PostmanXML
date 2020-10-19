@@ -28,7 +28,7 @@ public class Request {
         return null;
     }
 
-    public static String action() {
+    public void action() {
         try {
             httpConn = (HttpURLConnection) new URL(endPoint).openConnection();
             buffer = (body).getBytes();
@@ -45,7 +45,7 @@ public class Request {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return;
     }
 
 
@@ -72,6 +72,7 @@ public class Request {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        httpConn.disconnect();
         return null;
     }
 }
